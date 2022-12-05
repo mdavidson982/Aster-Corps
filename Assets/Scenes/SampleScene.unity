@@ -1473,41 +1473,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &999147641 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 520777866989726798, guid: 45e8e5db73ffc83418f351abe6b67b61, type: 3}
-  m_PrefabInstance: {fileID: 4046784196176087616}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &999147642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999147641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 52d96358f498ab8499dd7791dc366182, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!4 &999147648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7970055095403204334, guid: 45e8e5db73ffc83418f351abe6b67b61, type: 3}
@@ -9422,21 +9387,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1614767713341381169, guid: 45e8e5db73ffc83418f351abe6b67b61, type: 3}
-      propertyPath: m_Size.y
-      value: 0.25250578
-      objectReference: {fileID: 0}
-    - target: {fileID: -1614767713341381169, guid: 45e8e5db73ffc83418f351abe6b67b61, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0077695847
-      objectReference: {fileID: 0}
-    - target: {fileID: -1614767713341381169, guid: 45e8e5db73ffc83418f351abe6b67b61, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.16351923
-      objectReference: {fileID: 0}
     - target: {fileID: 520777866989726798, guid: 45e8e5db73ffc83418f351abe6b67b61, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7242601948455049240, guid: 45e8e5db73ffc83418f351abe6b67b61, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7970055095403204334, guid: 45e8e5db73ffc83418f351abe6b67b61, type: 3}
       propertyPath: m_RootOrder
