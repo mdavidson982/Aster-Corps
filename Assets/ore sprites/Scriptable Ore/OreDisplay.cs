@@ -36,14 +36,20 @@ public class OreDisplay : MonoBehaviour
         transform.position = tempPos;
         }else{
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
-
+        posOffset = transform.position;
+            if(transform.position == player.transform.position){
+                Destroy(gameObject);
+            }
         }
     }
-    
+
 
     private void OnTriggerEnter2D(Collider2D other){
-        //Debug.Log("Yes, you're in");
         trigger = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other){
+        trigger = false;
     }
 
 }
