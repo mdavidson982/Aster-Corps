@@ -14,7 +14,9 @@ public class PC1 : MonoBehaviour
     public HealthBar healthBar;
 
     public int health { get { return currentHealth; }}
-    int currentHealth;
+    public int currentHealth;
+
+    public int moneyCounter;
 
     bool isInvincible;
     float invincibleTimer;
@@ -69,11 +71,22 @@ public class PC1 : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){
             TakeDamage(20);
         }
+
+        if(Input.GetKeyDown(KeyCode.P)){
+            AddHealth(20);
+        }
     }
 
     void TakeDamage(int damage){
-        currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
         healthBar.SetHealth(currentHealth);
+    }
+
+    void AddHealth(int amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        healthBar.SetHealth(currentHealth);
+
     }
 
 
