@@ -6,8 +6,12 @@ public class PC1 : MonoBehaviour
 {
     public float speed = 3.0f;
     
-    public int maxHealth = 5;
+    //Changed maxHealth to 100
+    public int maxHealth = 100;
     public float timeInvincible = 2.0f;
+    //Create heathbar object, should be tied to the UI component in the top left
+    //  Look at HealthBar.cs in the Health Bar Sprites file for more info on the object
+    public HealthBar healthBar;
 
     public int health { get { return currentHealth; }}
     int currentHealth;
@@ -31,6 +35,7 @@ public class PC1 : MonoBehaviour
         animator = GetComponent<Animator>();
 
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -59,7 +64,18 @@ public class PC1 : MonoBehaviour
                 isInvincible = false;
             }
         }
+
+        //This will be used to simulate the player getting hurt, This will trigger if you press the space bar
+        if(Input.GetKeyDown(KeyCode.Space)){
+            TakeDamage(20);
+        }
     }
+
+    void TakeDamage(int damage){
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+
 
     void FixedUpdate()
     {
