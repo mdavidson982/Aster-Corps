@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8793639957104055765, guid: 9c447c54c8e0416e9446cadb88c48fd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -125,6 +125,8 @@ MonoBehaviour:
   maxHealth: 100
   timeInvincible: 2
   healthBar: {fileID: 0}
+  currentHealth: 0
+  moneyCounter: 0
   projectilePrefab: {fileID: 0}
 --- !u!61 &-1614767713341381169
 BoxCollider2D:
