@@ -150,4 +150,4 @@ MonoBehaviour:
   oreImage: {fileID: 3785798988973832894}
   frequency: 1.25
   amplitude: 0.25
-  moveSpeed: 2
+  moveSpeed: 5.5

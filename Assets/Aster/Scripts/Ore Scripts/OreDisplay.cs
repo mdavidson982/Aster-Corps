@@ -11,7 +11,7 @@ public class OreDisplay : MonoBehaviour
     public float amplitude = 0.25f;
     public float moveSpeed = 2f;
     private bool trigger = false;
-    private GameObject player; 
+    private GameObject player;
     // Start is called before the first frame update
 
     Vector2 posOffset =  new Vector2();
@@ -38,6 +38,15 @@ public class OreDisplay : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         posOffset = transform.position;
             if(transform.position == player.transform.position){
+                if(ore.isHeal){
+                    PC1 user = player.gameObject.GetComponent<PC1>();
+                    user.ChangeHealth(ore.Value);
+
+                }else{
+
+                    ScoreManager.instance.AddPoints(ore.Value);
+                }
+
                 Destroy(gameObject);
             }
         }
@@ -45,11 +54,17 @@ public class OreDisplay : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other){
-        trigger = true;
+        
+        if (other.name == "Player"){
+            trigger = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other){
-        trigger = false;
+        
+        if (other.name == "Player"){
+            trigger = false;
+        }
     }
 
 }

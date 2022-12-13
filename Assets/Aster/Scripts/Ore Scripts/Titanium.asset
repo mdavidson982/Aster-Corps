@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Titanium
   m_EditorClassIdentifier: 
   OreName: 
-  Value: 0
+  Value: 25
   artwork: {fileID: 0}

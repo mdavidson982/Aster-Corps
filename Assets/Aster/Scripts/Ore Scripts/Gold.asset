@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: 
   OreName: Gold
-  Value: 0
+  Value: 100
   artwork: {fileID: 21300000, guid: 26da7ea5de71d0d429d78bd1d77c730c, type: 3}
