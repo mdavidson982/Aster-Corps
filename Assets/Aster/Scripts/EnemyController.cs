@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    
+
     public float speed;
     public bool vertical;
     public float changeTime = 2.0f;
@@ -12,11 +12,20 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D rigidbody2D;
     float timer;
     int direction = 1;
-
+    public float range = 3.0f;
+    private GameObject User;
     Animator animator;
 
     bool alive = true;
-    
+
+
+    private void Awake()
+    {
+        //User is used in reference to get the positional data of the Player
+        User = GameObject.Find("Player");
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,14 +37,14 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!alive)
+        if (!alive)
         {
             return;
         }
 
         timer -= Time.deltaTime;
 
-        if(timer < 0)
+        if (timer < 0)
         {
             direction = -direction;
             timer = changeTime;
@@ -44,13 +53,21 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(!alive)
+        if (!alive)
         {
             return;
         }
 
+        
+
         Vector2 position = rigidbody2D.position;
-        if(vertical)
+
+        if(Vector2.Distance(User.transform.position, position) <= range)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, User.transform.position, speed * Time.deltaTime);
+        }
+
+        if (vertical)
         {
             position.y = position.y + Time.deltaTime * speed * direction;
             animator.SetFloat("Move X", 0);
@@ -70,7 +87,7 @@ public class EnemyController : MonoBehaviour
     {
         PC1 player = other.gameObject.GetComponent<PC1>();
 
-        if(player != null)
+        if (player != null)
         {
             player.ChangeHealth(-20);
         }
