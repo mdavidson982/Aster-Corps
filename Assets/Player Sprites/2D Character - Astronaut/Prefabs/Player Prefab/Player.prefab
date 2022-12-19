@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2667667362497307490}
   - component: {fileID: -1614767713341381169}
   - component: {fileID: 288725062736891776}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   currentHealth: 0
   moneyCounter: 0
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 2498574966742100798, guid: b663da247ffaa1445bee24996b51badb, type: 3}
 --- !u!61 &-1614767713341381169
 BoxCollider2D:
   m_ObjectHideFlags: 0

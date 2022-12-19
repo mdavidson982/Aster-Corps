@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     float timer;
     int direction = 1;
     public float range = 3.0f;
+    public int health = 10;
     private GameObject User;
     Animator animator;
 
@@ -90,6 +91,15 @@ public class EnemyController : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-20);
+        }
+    }
+
+    public void ChangeHealth(int damage){
+
+        health -= damage;
+
+        if (health <= 0){
+            Destroy(gameObject);
         }
     }
 
